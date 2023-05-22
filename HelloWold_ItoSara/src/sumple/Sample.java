@@ -1,4 +1,4 @@
-package sample;
+package sumple;
 
 public class Sample {
 

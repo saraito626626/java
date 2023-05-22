@@ -169,16 +169,15 @@ public class Qes1_13 {
 				System.out.println("BMIは"+(double)(Math.round(bmi*10))/10+"です");
 				
 		//-------------------------------------------------------------------------------------------
-				// 改行
+			    // 改行
 				System.out.println("");
-				//				変数ageを和算で自己代入
+				// 変数ageを和算で自己代入
 				age += age;
-//				
+				// 変数heightを和算で自己代入
 				height += height;
-//				
+				// 変数ewightを和算で自己代入
 				weight += weight;
-				
-//				
+								
 				//「初めまして鈴木一郎です」と出力
 				System.out.println("初めまして" + name + "です");
 				
@@ -201,7 +200,8 @@ public class Qes1_13 {
 		//-------------------------------------------------------------------------------------------
 				// 改行
 				System.out.println("");
-				//				25以上ならtrueが出力されるようにする
+				
+				// 25以上ならtrueが出力されるようにする
 				age = 24;
 				System.out.println(age >= 25);
 						
@@ -209,22 +209,25 @@ public class Qes1_13 {
 				// 改行
 				System.out.println("");
 				
+				// 年齢・身長・体重を文字列型に型変換
 				String sAge = String.valueOf(age);
 				height = 168.5;
 				String sHeight = String.valueOf(height);
 				weight = 64.2;
 				String sWeight = String.valueOf(weight);
 				
+				// 繋げて出力
 				System.out.println(sAge + sHeight + sWeight);
-				
 				
 		//-------------------------------------------------------------------------------------------
 				// 改行
 				System.out.println("");
-//				
+				
+				// 年齢・身長を整数型に変換
 				int inAg = Integer.valueOf(sAge);
 				int inHeight = (int)Double.parseDouble(sHeight);
 				
+				// 整数型にしたものを出力
 				System.out.println(inAg);
 				System.out.println(inHeight);
 				
@@ -232,6 +235,7 @@ public class Qes1_13 {
 				// 改行
 				System.out.println("");
 				
+				// 年齢・身長で年齢25がもしくは身長が160であればtrueを出力
 				System.out.println(inAg == 25 || inHeight >= 160);
 	}
 }

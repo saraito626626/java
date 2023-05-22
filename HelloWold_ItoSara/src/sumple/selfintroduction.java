@@ -1,6 +1,6 @@
-package sample;
+package sumple;
 
-public class SelfIntroduction {
+public class selfintroduction {
 
 	public static void main(String[] args) {
 
