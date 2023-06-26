@@ -14,21 +14,33 @@ public class Qes1_3 {
 
 		// 入力した値の読み込み	
 		String userName = null;
+		
 		// falseに初期化
 		boolean it = false;
+		
+		// nullチェック
+		userName = null;
+		
+		
+		// 出力される手の格納
+		String[] item = {"グー","チョキ","パー"};
+		
 		
 		// 入力した値を取得
 		while (!it) {
 			userName = sc.nextLine();
+			
 
 			// 入力した値の文字数が10文字以上の時
 			if (userName.length() > 10) {
 
 				// 名前を10文字以内にしてくださいと出力
 				System.out.println("名前を10文字以内にしてください");
+				
 
 			// 入力されてない、または0だった場合は 
 			} else if (Objects.isNull(userName) || userName.isEmpty()) {
+				
 
 				// 名前を入力してくださいと出力
 				System.out.println("名前を入力してください");
@@ -42,26 +54,27 @@ public class Qes1_3 {
 			} else {
 
 				// ユーザー名（自分が入力したユーザー名を）を登録しましたと出力
-				System.out.println("ユーザー名「" + userName + "」を登録しました");
+				System.out.println("ユーザー名「" + userName + "」を登録しました \n");
 				
-				// 改行
-				System.out.println();
 				
 				// 処理を終了
 				it = true;
 			}
 	
 		}
+		
+		
 
-		// 勝ち、あいこ、負けの数を初期化
+		// 試行回数を初期化
 		int totalCount = 0;
 		
+		boolean flag = false;
 		
 		// ランダム関数のインスタンス化
 		Random rad = new Random();
 		
 		// 勝つまでループさせる
-		while (totalCount >= 0) {
+		while (flag == false) {
 			
 			// 回数をカウント
 			 totalCount++;
@@ -75,25 +88,19 @@ public class Qes1_3 {
 			
 
 			// 自分の出した手を出力
-			System.out.println(userName + "の手は「" + rad + "」");
+			System.out.println(userName + "の手は「" + item[userRound] + "」");
 
 			// 相手の出した手を出力
-			System.out.println("相手の手は「" + rad + "」" + "\n");
+			System.out.println("相手の手は「" + item[comRound] + "」" + "\n");
 
 			
 
-			// 勝った場合の処理
-			if ((userRound == 0 && comRound == 1) ||
-				(userRound == 1 && comRound == 2) || 
-				(userRound == 2 && comRound == 0)) {
+			// あいこの場合の処理
+			if (userRound == comRound){
 				
+				System.out.println("DRAW あいこ もう一回しましょう！");
+
 				
-				// 負けた場合の文を出力
-				System.out.println("やるやん。");
-				System.out.println("次は俺にリベンジさせて");
-				
-				// 勝った場合ループを中断してから処理から抜ける
-				break;
 			}
 
 			// 負けた場合の処理
@@ -122,18 +129,26 @@ public class Qes1_3 {
 
 			}
 
-			// あいこの場合の処理
+			// 勝った場合の処理
 			else {
-				System.out.println("DRAW あいこ もう一回しましょう！");
-
+				
+				// 勝った場合の文を出力
+				System.out.println("やるやん。");
+				System.out.println("次は俺にリベンジさせて");
+				
+				// じゃんけんの試行回数を出力
+				System.out.println("勝つまでにかかった合計回数は" +  totalCount + "です");
+				
+				// 勝った場合ループを中断してから処理から抜ける
+				flag = true;
+				
 				
 			}
 
 		}
 		
 
-		// じゃんけんの試行回数を出力
-		System.out.println("勝つまでにかかった合計回数は" +  totalCount + "です");
+		
 		
 		// スキャナーの処理を閉じる
 		sc.close();

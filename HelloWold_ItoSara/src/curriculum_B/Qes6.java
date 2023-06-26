@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class Qes6 {
 
+	@SuppressWarnings("unlikely-arg-type")
 	public static void main(String[] args) {
 
 

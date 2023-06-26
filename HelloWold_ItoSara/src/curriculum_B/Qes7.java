@@ -13,125 +13,75 @@ public class Qes7 {
 		・このプログラムの実行は必ず1回以上行われるようにしてください											
 		・出力例を参考にプログラミングを作成してください											
 		 */
+		
 		// Scannerクラスをインスタンス
 		Scanner scanner = new Scanner(System.in);
 
 		// 生徒の人数を入力
 		System.out.print("生徒の人数を入力してください（2以上）: ");
-		
+		System.out.println();
 		int numOfStudents = scanner.nextInt();
 		
-		// 改行
-		System.out.println();
+
+		// 各教科の配列を作成
+		String[] subjects = { "英語", "数学", "理科", "社会" };
 		
-		// double型の配列に生徒の人数を代入
+		
+		/* 
+		 * 2次元配列を利用して、インスタンス化
+		 * 各生徒の平均点を格納
+		 * 各教科の平均点を格納
+		 */
+		double[][] scores = new double[subjects.length][numOfStudents];
 		double[] averageScores = new double[numOfStudents];
-		
-		// double型の配列に4つ要素を代入
-		double[] totalScores = new double[4];
+		double[] averageSubjects = new double[subjects.length];
 		
 
-		String subject;
-		
 		// 各生徒の成績を入力し、合計点と平均点を計算
 		for (int i = 0; i < numOfStudents; i++) {
-			double[] scores = new double[4];
 
-			for (int j = 0; j < 4; j++) {
+			for (int j = 0; j < subjects.length; j++) {
+				System.out.printf("%d人目の%sの点数を入力してください: ", i + 1, subjects[j]);
+				scores[j][i] = scanner.nextDouble();
 				
-				
-				switch (j) {
-				
-				case 0:
-					subject = "英語";
-					break;
-					
-				case 1:
-					subject = "数学";
-					break;
-					
-				case 2:
-					subject = "理科";
-					break;
-					
-				case 3:
-					subject = "社会";
-					break;
-					
-				default:
-					subject = "";
-					break;
-				}
-
-				System.out.printf("%d人目の『%s』の点数を入力してください: ", i + 1, subject);
-				scores[j] = scanner.nextDouble();
-				
-				// 合計点を更新
-				totalScores[j] += scores[j]; 
+				// 各生徒、各教科の点数を加算（平均点を計算するため）
+				averageScores[i] += scores[j][i];
+				averageSubjects[j] += scores[j][i];
 			}
 			
-			// double型のsumの初期化
-			double sum = 0.0;
-			
-			// 拡張for文でsumにscoreを和算
-			for (double score : scores) {
-				sum += score;
-			}
-			
-			// 平均点を計算
-			double averageScore = sum / scores.length; 
-			
-			 // 平均点を格納
-			averageScores[i] = averageScore;
-			
-			// 改行
 			System.out.println();
-
+			
+			// 各生徒の平均点を計算
+			averageScores[i] /= subjects.length;
 		}
-		
-		// 各教科の平均点を計算
-		double[] averageSubjects = new double[4];
-		
-		for (int i = 0; i < 4; i++) {
-			averageSubjects[i] = totalScores[i] / numOfStudents;
-		}
-		
-
-		// 全体の平均点を計算
-		double sum = 0.0;
-		
-		
-		for (double averageScore : averageScores) {
-			sum += averageScore;
-		}
-		
-		
-		double overallAverage = sum / averageScores.length;
 
 		
 		// 各生徒の平均点を出力
 		for (int i = 0; i < numOfStudents; i++) {
 			System.out.printf("%d人目の平均点は%.2f点です。\n", i + 1, averageScores[i]);
 		}
-		
-		
-		// 改行
-		System.out.println();
-		
 
-		// 各教科の平均点と全体の平均点を出力
-		String[] subjects = {"英語", "数学", "理科", "社会"};
 		
+		System.out.println();
+
 		
-        for (int i = 0; i < 4; i++) {
-            System.out.printf("%sの平均点は%.2f点です。\n", subjects[i], averageSubjects[i]);
-        }
+		// 各教科の平均点を計算
+		for (int i = 0; i < subjects.length; i++) {
+			averageSubjects[i] /= numOfStudents;
+			System.out.printf("%sの平均点は%.2f点です。\n", subjects[i], averageSubjects[i]);
+		}
+
 		
+		// 全体の平均点を計算
+		double overallAverage = 0.0;
+		for (double average : averageScores) {
+			overallAverage += average;
+		}
 		
+		overallAverage /= numOfStudents;
 		System.out.printf("全体の平均点は%.2f点です。\n", overallAverage);
-		
+
 		// スキャナーの処理を閉じる
 		scanner.close();
 	}
-	
 }

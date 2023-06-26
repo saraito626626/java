@@ -4,10 +4,9 @@ public class Qes4 {
 	public static void main(String[] args) {
 		
 		// 課題4と出力
-		System.out.println("課題4");
+		System.out.println("課題4 \n");
 		
-		// 改行
-		System.out.println();
+		
 		
 		// かけられる数が9になるまでインクリメント
 		for (int i = 1; i <= 9; i++) {
@@ -20,7 +19,7 @@ public class Qes4 {
 				
 				// かける数が8になるまで||をつけて出力
 				if(s <= 8) {
-				System.out.printf("%02d * %02d = %02d ||", i, s, ans);
+				System.out.printf("%02d * %02d = %02d || ", i, s, ans);
 				}
 				
 				// かける数が9の場合||がない状態で出力
@@ -30,7 +29,7 @@ public class Qes4 {
 			}
 			
 			// かける数が9になる度、改行
-			System.out.println();
+			System.out.println("\n");
 		}
 
 	}
