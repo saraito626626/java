@@ -66,6 +66,7 @@ public class Curriculum_New_1_18 {
 			 }
 			double average = (double) sum / array.length;
 			return average;
+			
 		 }
 		
 
@@ -104,10 +105,11 @@ public class Curriculum_New_1_18 {
         int[] up = ran(count);
 
         // Q6
-        average(up);
+        double averageNumber = average(up);
+        System.out.println(averageNumber);
 
         // Q7
-        checkNumber(average(up));
+        checkNumber(averageNumber);
 		
 		
 		
