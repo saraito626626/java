@@ -51,11 +51,13 @@ public class Qes1_13 {
 		//-------------------------------------------------------------------------------------------
 		
 		// 11110になるように出力
-		System.out.println(by + sh + i + l);
+		System.out.println(
+				by + sh + i + l+ 
+				fl + db);
 
 		// 20になるように出力
-		System.out.println(fl + db);
-
+		System.out.println();
+		
 		// a ハロー trueになるように出力
 		System.out.println(ch + " " + st + " " + bo);
 

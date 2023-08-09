@@ -2,14 +2,17 @@ package introduce1;
 
 public class Main {
 	public static void main(String[] args) {
-		Person person1 = new Person("鈴木太郎", 20, 1.7, 60);
-		
-		// 出力
-		System.out.println(person1.name);
-		System.out.println("BMIは" + person1.bmi() + "です");
-		System.out.println("年は" + person1.age + "です");
-		System.out.println("合計" + Person.number + "人です");
+		Person person1 = new Person("鈴木", "太郎", 20, 1.7, 60);
+		Person person2 = new Person("山田", "花子", 22, 1.5, 40);
+
+		Car car = new Car();
+		Bicycle bicycle = new Bicycle();
+
+		car.setOwner(person1.fullName());
+		bicycle.setOwner(person2.fullName());
+
+		person1.buy(car);
+		person2.buy(bicycle);
 	}
 
-	
 }

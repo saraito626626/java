@@ -37,7 +37,8 @@ public class Curriculum26_28 {
 			System.out.println("動物名 :" + name);
 			System.out.println("体長 :" + height + "m");
 			System.out.println("速度 :" + speed + "km/h");
-
+			
+			// 動物の名前を引数として、メソッドを呼び出し
 			animalName(name);
 			System.out.println();
 		}
