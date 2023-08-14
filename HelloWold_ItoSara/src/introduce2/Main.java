@@ -10,6 +10,7 @@ public class Main {
         
         // 問題６
         Person.printCount();
+        
     }
  
 }
