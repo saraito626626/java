@@ -8,6 +8,7 @@ public class Person {
 
 	// 問題１
 	public static int count = 0;
+	
 
 	Person(String name, int age, double height, double weight) {
 		this.name = name;
@@ -24,25 +25,25 @@ public class Person {
 		return this.weight / this.height / this.height;
 	}
 
-	public void print(){
-	System.out.println("名前は" + this.name() + "です");
-	System.out.println("年は" + this.age() + "です");
+	public void print() {
+		System.out.println("名前は" + this.name() + "です");
+		System.out.println("年は" + this.age() + "です");
 	}
-	
-	// 問題５
-	public static void printCount() {
-		// 問題３
-		System.out.println("合計" + count + "人です");
-	}
-	
 
-	private String age() {
+	// 問題４
+	public static void printCount() {
+		// 問題５
+		System.out.println("合計" + count + "人です");
 		
-		return null;
 	}
 
 	private String name() {
-		
-		return null;
+
+		return name;
+	}
+
+	private int age() {
+
+		return age;
 	}
 }

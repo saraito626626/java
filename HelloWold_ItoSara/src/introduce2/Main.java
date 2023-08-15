@@ -8,8 +8,12 @@ public class Main {
         Person person2 = new Person("山田花子", 22, 1.5, 40);
         person2.print();
         
+        
+     // 問題３
+     	System.out.println("合計" + Person.count + "人です");	
+     		
         // 問題６
-        Person.printCount();
+     	 Person.printCount();
         
     }
  
